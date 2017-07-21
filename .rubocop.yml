@@ -1,0 +1,21 @@
+# Small Update for deployment testing.
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'raml/**/*'
+    - 'webui/**/*'
+    - 'db/migrate/*'
+    - 'vendor/**/*'
+    - 'Vagrantfile'
+    - 'db/schema.rb'
+    - 'Gemfile'
+  #RunRailsCops: true
+Metrics/MethodLength:
+  Max: 20
+Metrics/LineLength:
+    Max: 150
+Metrics/ClassLength:
+  Exclude:
+    - test/**/*.rb
+Lint/InheritException:
+  Enabled: false
