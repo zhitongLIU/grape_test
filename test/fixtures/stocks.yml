@@ -1,3 +1,7 @@
 one:
   name: toto
   quantity: 1
+
+two:
+  name: two
+  quantity: 2
