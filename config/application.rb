@@ -15,5 +15,6 @@ module GrapeTest
     config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
     config.autoload_paths += [Rails.root.join('app', 'validators').to_s]
+    config.autoload_paths += Dir[Rails.root.join('app', 'concepts', '*')]
   end
 end
