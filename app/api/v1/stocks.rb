@@ -1,10 +1,11 @@
 #
 module V1
   #
-  class Stocks < Base
+  class Stocks < V1::Base
     resource :stocks do
+      desc 'get all stocks'
       get '/' do
-        Stock::Index.present(params).model
+        present Stock::Index.present(params).model, with: Entities::Stock
       end
     end
   end
