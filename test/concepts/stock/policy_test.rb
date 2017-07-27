@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StockTest < ActiveSupport::TestCase
+class StockPolicyTest < ActiveSupport::TestCase
   test 'index? should return true' do
     user = OpenStruct.new
     stock = OpenStruct.new
