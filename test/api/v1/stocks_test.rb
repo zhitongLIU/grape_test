@@ -7,4 +7,11 @@ class StockTest < ActionDispatch::IntegrationTest
     Stock::Index.expects(:present).with(params).returns(mock)
     get '/api/v1/stocks', params: params
   end
+
+  test 'index should call Stock::Show operation' do
+    mock = OpenStruct.new(model: [])
+    params = { 'id' => 1 }
+    Stock::Show.expects(:present).with(params).returns(mock)
+    get '/api/v1/stocks/1', params: params
+  end
 end
