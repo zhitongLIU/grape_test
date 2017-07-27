@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StockTest < ActiveSupport::TestCase
+class StockIndexTest < ActiveSupport::TestCase
   test 'should call policy#index?' do
     Stock::Policy.any_instance.expects(:index?).returns(true)
     Stock::Index.present({})
