@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StockTest < ActionDispatch::IntegrationTest
+class StocksTest < ActionDispatch::IntegrationTest
   test 'index should call Stock::Index operation' do
     mock = OpenStruct.new(model: [])
     params = {}
