@@ -20,6 +20,10 @@ module V1
         error_response(message: e.message, status: 404)
       end
 
+      rescue_from Trailblazer::Operation::InvalidContract do |e|
+        error_response(message: e.message, status: 422)
+      end
+
       rescue_from ActiveRecord::RecordInvalid do |e|
         error_response(message: e.message, status: 422)
       end
