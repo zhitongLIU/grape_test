@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class StockTest < ActionDispatch::IntegrationTest
+class StocksTest < ActionDispatch::IntegrationTest
   test 'index should call Stock::Index operation' do
     mock = OpenStruct.new(model: [])
     params = {}
@@ -27,5 +27,12 @@ class StockTest < ActionDispatch::IntegrationTest
     params = { 'id' => '1', 'name' => 'thth', 'quantity' => 1 }
     Stock::Update.expects(:call).with(params).returns(mock)
     put '/api/v1/stocks/1', params: params
+  end
+
+  test 'history_index should call Stock::HistoryIndex operation' do
+    mock = OpenStruct.new(model: [])
+    params = { 'id' => '1' }
+    Stock::HistoryIndex.expects(:call).with(params).returns(mock)
+    get '/api/v1/stocks/1/history', params: params
   end
 end
