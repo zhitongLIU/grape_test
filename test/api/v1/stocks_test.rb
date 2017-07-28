@@ -28,4 +28,11 @@ class StockTest < ActionDispatch::IntegrationTest
     Stock::Update.expects(:call).with(params).returns(mock)
     put '/api/v1/stocks/1', params: params
   end
+
+  test 'history_index should call Stock::HistoryIndex operation' do
+    mock = OpenStruct.new(model: [])
+    params = { 'id' => '1' }
+    Stock::HistoryIndex.expects(:call).with(params).returns(mock)
+    get '/api/v1/stocks/1/history', params: params
+  end
 end

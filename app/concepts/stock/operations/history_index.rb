@@ -9,7 +9,7 @@ class Stock
     policy Stock::Policy, :history_index?
 
     def process(_params)
-      @model = @model.revisions.reverse
+      @model = @model.audits.reverse
     end
   end
 end
