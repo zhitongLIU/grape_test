@@ -24,4 +24,10 @@ class StockPolicyTest < ActiveSupport::TestCase
     stock = OpenStruct.new
     assert Stock::Policy.new(user, stock).update?
   end
+
+  test 'history_index? should return true' do
+    user = OpenStruct.new
+    stock = OpenStruct.new
+    assert Stock::Policy.new(user, stock).history_index?
+  end
 end
