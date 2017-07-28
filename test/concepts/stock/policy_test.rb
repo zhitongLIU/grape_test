@@ -18,4 +18,10 @@ class StockPolicyTest < ActiveSupport::TestCase
     stock = OpenStruct.new
     assert Stock::Policy.new(user, stock).create?
   end
+
+  test 'update? should return true' do
+    user = OpenStruct.new
+    stock = OpenStruct.new
+    assert Stock::Policy.new(user, stock).update?
+  end
 end

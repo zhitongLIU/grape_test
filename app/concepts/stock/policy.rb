@@ -18,5 +18,9 @@ class Stock
     def create?
       true
     end
+
+    def update?
+      true
+    end
   end
 end
