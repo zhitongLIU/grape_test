@@ -22,5 +22,9 @@ class Stock
     def update?
       true
     end
+
+    def history_index?
+      true
+    end
   end
 end
