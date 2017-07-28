@@ -26,6 +26,16 @@ module V1
       get ':id' do
         present Stock::Show.present(params).model, with: Entities::Stock
       end
+
+      desc 'update a stock'
+      params do
+        requires :id, type: String, desc: 'id of an stock'
+        optional :name, type: String, desc: 'name of the stock'
+        optional :quantity, type: Integer, desc: 'quantity of the stock'
+      end
+      put ':id' do
+        present Stock::Update.call(params).model, with: Entities::Stock
+      end
     end
   end
 end
