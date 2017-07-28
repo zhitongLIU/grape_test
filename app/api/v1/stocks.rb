@@ -36,6 +36,14 @@ module V1
       put ':id' do
         present Stock::Update.call(params).model, with: Entities::Stock
       end
+
+      desc 'get history of a stock'
+      params do
+        requires :id, type: String, desc: 'id of an stock'
+      end
+      get ':id/history' do
+        present Stock::HistoryIndex.call(params).model
+      end
     end
   end
 end
