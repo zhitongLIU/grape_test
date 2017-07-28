@@ -21,4 +21,11 @@ class StockTest < ActionDispatch::IntegrationTest
     Stock::Create.expects(:call).with(params).returns(mock)
     post '/api/v1/stocks', params: params
   end
+
+  test 'update should call Stock::Update operation' do
+    mock = OpenStruct.new(model: [])
+    params = { 'id' => '1', 'name' => 'thth', 'quantity' => 1 }
+    Stock::Update.expects(:call).with(params).returns(mock)
+    put '/api/v1/stocks/1', params: params
+  end
 end
