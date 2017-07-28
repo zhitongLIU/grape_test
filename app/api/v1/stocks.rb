@@ -21,7 +21,7 @@ module V1
 
       desc 'get a stock'
       params do
-        requires :id, type: Integer, desc: 'id of an stock'
+        requires :id, type: String, desc: 'id of an stock'
       end
       get ':id' do
         present Stock::Show.present(params).model, with: Entities::Stock
