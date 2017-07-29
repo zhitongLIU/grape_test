@@ -26,5 +26,9 @@ class Stock
     def history_index?
       true
     end
+
+    def destroy?
+      true
+    end
   end
 end

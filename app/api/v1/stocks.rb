@@ -44,6 +44,15 @@ module V1
       get ':id/history' do
         present Stock::HistoryIndex.call(params).model, with: Entities::StockHistory
       end
+
+      desc 'destroy a stock'
+      params do
+        requires :id, type: String, desc: 'id of an stock'
+      end
+      delete ':id' do
+        Stock::Destroy.call(params).model
+        @body = nil
+      end
     end
   end
 end

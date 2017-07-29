@@ -35,4 +35,11 @@ class StocksTest < ActionDispatch::IntegrationTest
     Stock::HistoryIndex.expects(:call).with(params).returns(mock)
     get '/api/v1/stocks/1/history', params: params
   end
+
+  test 'destroy should call Stock::HistoryIndex operation' do
+    mock = OpenStruct.new(model: [])
+    params = { 'id' => '1' }
+    Stock::Destroy.expects(:call).with(params).returns(mock)
+    delete '/api/v1/stocks/1', params: params
+  end
 end
