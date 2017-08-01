@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170721152508) do
   enable_extension "uuid-ossp"
 
   create_table "audits", force: :cascade do |t|
-    t.integer  "auditable_id"
+    t.uuid     "auditable_id"
     t.string   "auditable_type"
     t.integer  "associated_id"
     t.string   "associated_type"
