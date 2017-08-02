@@ -1,24 +1,53 @@
-# README
+# Grape test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is for testing propose
+It use Grape for creating a simple API for stock getion
 
-Things you may want to cover:
+## Stacks
 
-* Ruby version
+Grape-api Grape-entity for api construction
 
-* System dependencies
+Trailblazer-rails(v1) for doing operations
 
-* Configuration
+Audits for recording model's changes
 
-* Database creation
+Swagger for Api's documentations
 
-* Database initialization
+## Ruby version
 
-* How to run the test suite
+tested for 2.2.3
 
-* Services (job queues, cache servers, search engines, etc.)
+## Configuration
 
-* Deployment instructions
+bundle install
 
-* ...
+## Database creation
+
+bundle exec rails db:create
+
+## Database initialization
+
+bundle exec rails db:migrate
+
+## How to run the test suite
+
+bundle exec rake
+
+## Deployment instructions
+
+it use codeship for CI & CD
+
+Please visit
+
+https://lztgrapetest.herokuapp.com/
+
+https://lztgrapetest.herokuapp.com/api/swagger
+
+## Screenshots
+![alt index](./screenshots/index.png)
+![alt new](./screenshots/new.png)
+![alt edit](./screenshots/edit.png)
+![alt history](./screenshots/history.png)
+![alt codeship](./screenshots/codeship.png)
+![alt swagger](./screenshots/swagger.png)
+
