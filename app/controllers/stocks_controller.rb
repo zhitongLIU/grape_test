@@ -1,3 +1,4 @@
+#
 class StocksController < ApplicationController
   def index
     @model = Stock::Index.present(params).model
@@ -6,6 +7,7 @@ class StocksController < ApplicationController
   def show
   end
 
+  # rubocop: disable Metrcis/AbcSize
   def create
     params[:name] = params['stock'][:name]
     params[:quantity] = params['stock'][:quantity]
@@ -18,6 +20,7 @@ class StocksController < ApplicationController
       end
     end
   end
+  # rubocop: enable Metrcis/AbcSize
 
   def new
   end
@@ -26,6 +29,7 @@ class StocksController < ApplicationController
     @stock = Stock::Show.present(params).model
   end
 
+  # rubocop: disable Metrcis/AbcSize
   def update
     params[:name] = params['stock'][:name]
     params[:quantity] = params['stock'][:quantity]
@@ -38,6 +42,7 @@ class StocksController < ApplicationController
       end
     end
   end
+  # rubocop: enable Metrcis/AbcSize
 
   def destroy
     op = Stock::Destroy.call(params)
