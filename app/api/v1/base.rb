@@ -7,17 +7,6 @@ module V1
     version 'v1', using: :path
     mount V1::Stocks
 
-    add_swagger_documentation(
-      base_path: '',
-      api_version: '1.0',
-      format: :json,
-      hide_documentation_path: true,
-      info: {
-        title: 'API',
-        description: 'API to expose informations',
-        contact: 'jfrancois@synbioz.com',
-        license: 'All Rights Reserved'
-      }
-    )
+    add_swagger_documentation add_version: true, base_path: '/'
   end
 end
