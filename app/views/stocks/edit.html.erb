@@ -1,0 +1,7 @@
+<h1> Edit Stock <%=@stock.id %> </h1>
+<%= simple_form_for @stock do |f| %>
+  <%= f.input :name %>
+  <%= f.input :quantity %>
+  <%= f.button :submit %>
+  <%= f.error :base %>
+<% end%>

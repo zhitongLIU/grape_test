@@ -1,0 +1,41 @@
+<%= link_to 'Back', :back %>
+
+<h1>History of Stocks <%= @id %></h1>
+
+<table style="width:100%">
+  <tr>
+    <th>Date</th>
+    <th>old name</th>
+    <th>new name</th>
+    <th>old quantity</th>
+    <th>new quantity</th>
+    <th>Action</th>
+  </tr>
+  <% @history.each do |record|%>
+    <tr>
+      <%
+        old_name = nil
+          new_name = nil
+          old_quantity = nil
+          new_quantity = nil
+
+          changes = record.audited_changes
+          if record.action == 'create'
+            new_name = changes['name']
+            new_quantity = changes['quantity']
+          else
+          old_name ||= changes['name'] && changes['name'].respond_to?(:first) && changes['name'].first
+          new_name ||= changes['name'] && changes['name'].respond_to?(:last) && changes['name'].last
+          old_quantity ||= changes['quantity'] && changes['quantity'].respond_to?(:first) && changes['quantity'].first
+          new_quantity ||= changes['quantity'] && changes['quantity'].respond_to?(:last) && changes['quantity'].last
+          end
+        %>
+      <td><%= record.created_at %></td>
+      <td><%= old_name %></td>
+      <td><%= new_name %></td>
+      <td><%= old_quantity %></td>
+      <td><%= new_quantity %></td>
+      <td><%= record.action %></td>
+    </tr>
+  <% end %>
+</table>

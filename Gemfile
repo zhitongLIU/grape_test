@@ -67,3 +67,7 @@ gem 'grape-swagger', '~> 0.27.3'
 gem 'grape-swagger-rails', '~> 0.3.0'
 gem "audited", "~> 4.5"
 gem 'kaminari'
+gem 'simple_form', '~> 3.5'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'capybara', '~> 2.7', '>= 2.7.1'
+gem 'grape-swagger-ui'

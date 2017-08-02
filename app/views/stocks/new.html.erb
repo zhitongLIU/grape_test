@@ -1,0 +1,7 @@
+<h1> New Stock </h1>
+<%= simple_form_for Stock.new do |f| %>
+  <%= f.input :name %>
+  <%= f.input :quantity %>
+  <%= f.button :submit %>
+  <%= f.error :base %>
+<% end%>
