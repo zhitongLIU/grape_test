@@ -8,6 +8,7 @@ AllCops:
     - 'vendor/**/*'
     - 'Vagrantfile'
     - 'db/schema.rb'
+    - 'config/initializers/simple_form.rb'
     - 'Gemfile'
   #RunRailsCops: true
 Metrics/MethodLength:

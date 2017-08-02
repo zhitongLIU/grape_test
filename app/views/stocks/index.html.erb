@@ -1,0 +1,27 @@
+<h1>List of Stocks</h1>
+
+<table style="width:100%">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Quantity</th>
+  </tr>
+  <div id='records'>
+  <% @model.each do |stock|%>
+    <tr>
+      <td><%= stock.id %></td>
+      <td><%= stock.name %></td>
+      <td><%= stock.quantity %></td>
+      <td><%= button_to "history", {:controller => :stocks, :action => 'history', :id => stock.id }, :method => :get %></td>
+      <td><%= button_to "modify", edit_stock_path(stock), :method => :put %></td>
+      <td><%= button_to "delete", {:controller => :stocks, :action => 'destroy', :id => stock.id }, :method => :delete %></td>
+    </tr>
+  <% end %>
+  </div>
+</table>
+
+</br>
+</br>
+</br>
+
+<td><%= link_to('Create new one', new_stock_path) %></td>

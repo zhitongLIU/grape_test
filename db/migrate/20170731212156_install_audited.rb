@@ -1,11 +1,12 @@
 class InstallAudited < ActiveRecord::Migration[5.0]
   def self.up
+    enable_extension 'uuid-ossp' unless extension_enabled?('uuid-ossp')
     create_table :audits, :force => true do |t|
-      t.column :auditable_id, :integer
+      t.column :auditable_id, :uuid
       t.column :auditable_type, :string
       t.column :associated_id, :integer
       t.column :associated_type, :string
-      t.column :user_id, :integer
+      t.column :user_id, :uuid
       t.column :user_type, :string
       t.column :username, :string
       t.column :action, :string
